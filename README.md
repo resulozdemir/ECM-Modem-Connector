@@ -1,11 +1,11 @@
 # ECM Mode Modem Manager
 
-This project automates the process of establishing a cellular internet connection in ECM mode using a Sixfab LTE modem with a Raspberry Pi. The script follows the steps outlined in the [Sixfab documentation](https://docs.sixfab.com/page/cellular-internet-connection-in-ecm-mode).
+This project automates the process of establishing a cellular internet connection in ECM mode using a Sixfab 4G/LTE modem with a Raspberry Pi. The script follows the steps outlined in the [Sixfab documentation](https://docs.sixfab.com/page/cellular-internet-connection-in-ecm-mode).
 
 ## Requirements
 
 - Raspberry Pi
-- Sixfab LTE modem
+- Sixfab 4G/LTE Cellular Modem Kit
 - Python 3
 - `pyserial` library
 
@@ -14,8 +14,8 @@ This project automates the process of establishing a cellular internet connectio
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/yourusername/ECM-Mode-Modem-Manager.git
-    cd ECM-Mode-Modem-Manager
+    git clone https://github.com/yourusername/ECM-Modem-Connector.git
+    cd ECM-Modem-Connector
     ```
 
 2. Install the required Python libraries:
@@ -73,7 +73,3 @@ If you encounter any issues, ensure that:
 - You are running the script with root privileges.
 
 For more information, refer to the [Sixfab documentation](https://docs.sixfab.com/page/cellular-internet-connection-in-ecm-mode).
-
-## License
-
-This project is licensed under the MIT License.
