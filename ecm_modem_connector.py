@@ -8,9 +8,9 @@ APN = "super"
 
 class ECM_Connector:
     def __init__(self, port=None, baudrate=115200, timeout=5, parity=serial.PARITY_NONE):
-        self.check_and_remove_modem_manager()
         if not self.is_modem_connected():
             raise Exception("Modem is not connected.")
+        self.check_and_remove_modem_manager()
         self.port = port or self.find_modem_port()
         if not self.port:
             raise Exception("Modem port not found.")
@@ -88,12 +88,15 @@ class ECM_Connector:
         self.send_at_command("AT+QPOWD")  # Power down command
         time.sleep(5)
         self.send_at_command("AT+CFUN=1,1")  # Restart modem
-        time.sleep(10)  # Wait for modem to restart
+        print("Modem restarting...")
+        time.sleep(30)  # Wait for modem to restart
 
 try:
     modem = ECM_Connector()
     
     if modem.set_apn() and modem.set_usb_mode():
+        print("USB mode and APN changed.")
+        modem.reset_modem()
         modem.connect_to_internet()
         while True:
             if modem.check_internet_connection():
