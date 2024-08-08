@@ -14,7 +14,7 @@ This project automates the process of establishing a cellular internet connectio
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/yourusername/ECM-Modem-Connector.git
+    git clone https://github.com/resulozdemir/ECM-Modem-Connector.git
     cd ECM-Modem-Connector
     ```
 
@@ -29,7 +29,7 @@ This project automates the process of establishing a cellular internet connectio
 1. Run the script with root privileges to allow network configuration changes:
 
     ```sh
-    sudo python3 ecm_mode_modem_manager.py
+    sudo python3 ecm_modem_connector.py
     ```
 
 2. The script will perform the following actions:
@@ -37,12 +37,13 @@ This project automates the process of establishing a cellular internet connectio
     - Verify that the Sixfab modem is connected via USB.
     - Set the modem to ECM mode.
     - Configure the APN settings.
+    - Reboot the modem.
     - Check the `usb0` interface and attempt to establish an internet connection.
     - Monitor the internet connection and reset the modem if the connection is lost.
 
 ## Code Explanation
 
-The main script `ecm_mode_modem_manager.py` includes the following functionalities:
+The main script `ecm_modem_connector.py` includes the following functionalities:
 
 - **ECM_Mode Class**: Handles the modem initialization, AT commands, and internet connectivity.
 - **send_at_command**: Sends AT commands to the modem and returns the response.
